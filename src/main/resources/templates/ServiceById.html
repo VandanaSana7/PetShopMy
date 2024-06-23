@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset = "UTF-8"
+		<title></title>
+		<style>
+			body{
+       			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        		margin: 0;
+        		padding: 0;
+        		background: url('https://img.freepik.com/free-vector/cute-pets-illustration_53876-112522.jpg?w=1380&t=st=1713329667~exp=1713330267~hmac=271856e8828bf055b014aef89d2d3e2ce6e9b713dfabcebb864d15ef771fa68a')
+        					no-repeat center center fixed;
+        		background-size: cover;
+        		background-blend-mode: overlay;
+        	}
+        	h1 {
+            	text-align: center;
+            	color: #008080;
+       		}
+        	table {
+            	width: 80%;
+            	margin: 20px auto;
+            	border-collapse: collapse;
+            	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            	background-color: #fff;
+        	}
+        	th, td {
+            	padding: 12px 15px;
+            	text-align: left;
+            	border-bottom: 1px solid #ddd;
+        	}
+        	th {
+            	background-color: #008080;
+            	color: #fff;
+        	}
+        	tr:nth-child(even) {
+            	background-color: #f2f2f2;
+        	}
+        	tr:hover {
+            	background-b5color: #ddd;
+        	}
+		</style>
+	</head>
+	
+	<body>
+		
+		<h1> Service By Id </h1>
+		<div th:object="${ServiceById}">
+		
+			<table>
+			
+				<thead>
+					<tr>
+						<!--
+						<th><strong>ServiceId</strong></th>
+						<th><strong>Name</strong></th>
+						<th><strong>Description</strong></th>
+						<th><strong>Price</strong></th>
+						<th><strong>Available</strong></th>
+						-->
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>ServiceId</strong></td>
+						<td>
+							<p th:text = "*{serviceId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Name</strong></td>
+						<td>
+							<p th:text = "*{name}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Description</strong></td>
+						<td>
+							<p th:text = "*{description}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Price</strong></td>
+						<td>
+							<p th:text = "*{price}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Available</strong></td>
+						<td>
+							<p th:text = "*{available}" />
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+		
+		</div>
+		
+	</body>
+
+</html>

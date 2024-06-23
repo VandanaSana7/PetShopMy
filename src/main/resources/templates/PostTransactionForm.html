@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Transaction Post Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			/*background-color: rgb(0, 128, 255);*/
+			background-image: linear-gradient(#DFF5FF, #67C6E3, #378CE7);
+			background-repeat: no-repeat;
+			min-height: 100%;
+			background-attachment: fixed;
+			margin: 0;
+			padding: 0;
+			opacity: 0.7;
+		}
+
+		.container {
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 24);
+		}
+
+		h1 {
+			text-align: center;
+			text-shadow: 1px 1px skyblue;
+			font-family: 'Times New Roman', Times, serif;
+
+		}
+
+		.form-group {
+			margin-bottom: 15px;
+		}
+
+		label {
+			font-weight: bold;
+			font-family: 'Times New Roman', Times, serif;
+			font-size: 20px;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+
+		input[type="number"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+
+		button {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			background-image: linear-gradient(to right, #67C6E3, #378CE7);
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+			color: black;
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Transaction Form</h1>
+		<form action="/transactions/add" method="post">
+			<div class="form-group">
+				<label for="transactionDate">Transaction Date:</label>
+				<input type="text" id="transactionDate" name="transactionDate" placeholder="yyyy-MM-dd">
+			</div>
+			<div class="form-group">
+				<label for="amount">Amount:</label>
+				<input type="decimal" id="amount" name="amount">
+			</div>
+			<div class="form-group">
+				<label for="transactionStatus">Transaction Status:</label>
+				<input type="text" id="transactionStatus" name="transactionStatus">
+			</div>
+			<div class="form-group">
+				<label for="customer">Customer Id:</label>
+				<input type="number" id="customer" name="customer">
+			</div>
+			<div class="form-group">
+				<label for="pet">Pet Id:</label>
+				<input type="number" id="pet" name="pet">
+			</div>
+
+				<button type="submit">Submit</button>
+		</form>
+	</div>
+</body>
+
+</html>

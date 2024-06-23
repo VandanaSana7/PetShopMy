@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset = "UTF-8">
+		<title></title>
+		<style>
+			body{
+       			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        		margin: 0;
+        		padding: 0;
+        		background: url('https://img.freepik.com/free-vector/cute-pets-illustration_53876-112522.jpg?w=1380&t=st=1713329667~exp=1713330267~hmac=271856e8828bf055b014aef89d2d3e2ce6e9b713dfabcebb864d15ef771fa68a')
+        					no-repeat center center fixed;
+        		background-size: cover;
+        		background-blend-mode: overlay;
+        	}
+        	h1 {
+            	text-align: center;
+            	color: #008080;
+       		}
+        	table {
+            	width: 80%;
+            	margin: 20px auto;
+            	border-collapse: collapse;
+            	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            	background-color: #fff;
+        	}
+        	th, td {
+            	padding: 12px 15px;
+            	text-align: left;
+            	border-bottom: 1px solid #ddd;
+        	}
+        	th {
+            	background-color: #008080;
+            	color: #fff;
+        	}
+        	tr:nth-child(even) {
+            	background-color: #f2f2f2;
+        	}
+        	tr:hover {
+            	background-b5color: #ddd;
+        	}
+		</style>
+	</head>
+	
+	<body>
+		
+		<center><h1>List of all the Transactions</h1></center>
+		<div th:each="transaction:${AllFailedTransactions}">
+		
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>Transaction Id</td>
+						<td>
+							<span th:text = "${transaction.transactionId}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Customers</td>
+						<td>
+							<span th:text = "${transaction.customer}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Pets</td>
+						<td>
+							<span th:text = "${transaction.pet}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Transaction Date</td>
+						<td>
+							<span th:text = "${transaction.transactionDate}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Amount</td>
+						<td>
+							<span th:text = "${transaction.amount}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Transaction Status</td>
+						<td>
+							<span th:text = "${transaction.transactionStatus}"></span>
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+		
+		</div>
+		
+	</body>
+
+</html>

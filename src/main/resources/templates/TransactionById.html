@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset = "UTF-8"
+		<title></title>
+		<style>
+			body{
+       			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        		margin: 0;
+        		padding: 0;
+        		background: url('https://img.freepik.com/free-vector/cute-pets-illustration_53876-112522.jpg?w=1380&t=st=1713329667~exp=1713330267~hmac=271856e8828bf055b014aef89d2d3e2ce6e9b713dfabcebb864d15ef771fa68a')
+        					no-repeat center center fixed;
+        		background-size: cover;
+        		background-blend-mode: overlay;
+        	}
+        	h1 {
+            	text-align: center;
+            	color: #008080;
+       		}
+        	table {
+            	width: 80%;
+            	margin: 20px auto;
+            	border-collapse: collapse;
+            	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            	background-color: #fff;
+        	}
+        	th, td {
+            	padding: 12px 15px;
+            	text-align: left;
+            	border-bottom: 1px solid #ddd;
+        	}
+        	th {
+            	background-color: #008080;
+            	color: #fff;
+        	}
+        	tr:nth-child(even) {
+            	background-color: #f2f2f2;
+        	}
+        	tr:hover {
+            	background-b5color: #ddd;
+        	}
+		</style>
+	</head>
+	
+	<body>
+		
+		<h1> Transaction By Id </h1>
+		<div th:object="${TransactionById}">
+		
+			<table>
+			
+				<thead>
+					<tr>
+						<!--
+						<th><strong>ServiceId</strong></th>
+						<th><strong>Name</strong></th>
+						<th><strong>Description</strong></th>
+						<th><strong>Price</strong></th>
+						<th><strong>Available</strong></th>
+						-->
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>TransactionId</strong></td>
+						<td>
+							<p th:text = "*{transactionId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Transaction Date</strong></td>
+						<td>
+							<p th:text = "*{transactionDate}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Amount</strong></td>
+						<td>
+							<p th:text = "*{amount}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Transaction Status</strong></td>
+						<td>
+							<p th:text = "*{transactionStatus}" />
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<!--
+						<th><strong>ServiceId</strong></th>
+						<th><strong>Name</strong></th>
+						<th><strong>Description</strong></th>
+						<th><strong>Price</strong></th>
+						<th><strong>Available</strong></th>
+						-->
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>CustomerId</strong></td>
+						<td>
+							<p th:text = "*{customer.customerId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>First Name</strong></td>
+						<td>
+							<p th:text = "*{customer.firstName}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Last Name</strong></td>
+						<td>
+							<p th:text = "*{customer.lastName}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Email</strong></td>
+						<td>
+							<p th:text = "*{customer.email}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Phone Number</strong></td>
+						<td>
+							<p th:text = "*{customer.phoneNumber}" />
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<!--
+						<th><strong>ServiceId</strong></th>
+						<th><strong>Name</strong></th>
+						<th><strong>Description</strong></th>
+						<th><strong>Price</strong></th>
+						<th><strong>Available</strong></th>
+						-->
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>AddressId</strong></td>
+						<td>
+							<p th:text = "*{customer.address.addressId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Street</strong></td>
+						<td>
+							<p th:text = "*{customer.address.street}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>City</strong></td>
+						<td>
+							<p th:text = "*{customer.address.city}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>State</strong></td>
+						<td>
+							<p th:text = "*{customer.address.state}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>ZipCode</strong></td>
+						<td>
+							<p th:text = "*{customer.address.zipCode}" />
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<!--
+						<th><strong>ServiceId</strong></th>
+						<th><strong>Name</strong></th>
+						<th><strong>Description</strong></th>
+						<th><strong>Price</strong></th>
+						<th><strong>Available</strong></th>
+						-->
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>PetId</strong></td>
+						<td>
+							<p th:text = "*{pet.petId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Name</strong></td>
+						<td>
+							<p th:text = "*{pet.name}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Breed</strong></td>
+						<td>
+							<p th:text = "*{pet.breed}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Age</strong></td>
+						<td>
+							<p th:text = "*{pet.age}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Price</strong></td>
+						<td>
+							<p th:text = "*{pet.price}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Description</strong></td>
+						<td>
+							<p th:text = "*{pet.description}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Image Url</strong></td>
+						<td>
+							<p th:text = "*{pet.imageUrl}" />
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<!--
+						<th><strong>ServiceId</strong></th>
+						<th><strong>Name</strong></th>
+						<th><strong>Description</strong></th>
+						<th><strong>Price</strong></th>
+						<th><strong>Available</strong></th>
+						-->
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>CategoryId</strong></td>
+						<td>
+							<p th:text = "*{pet.petCategory.categoryId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Name</strong></td>
+						<td>
+							<p th:text = "*{pet.petCategory.name}" />
+						</td>
+					</tr>
+					
+				</tbody>
+				
+			</table>
+			
+			
+		
+		</div>
+		
+	</body>
+
+</html>

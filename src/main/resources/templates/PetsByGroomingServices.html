@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset = "UTF-8"
+		<title> Pets By Grooming Services </title>
+		<style>
+			body{
+       			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        		margin: 0;
+        		padding: 0;
+        		background: url('https://img.freepik.com/free-vector/cute-pets-illustration_53876-112522.jpg?w=1380&t=st=1713329667~exp=1713330267~hmac=271856e8828bf055b014aef89d2d3e2ce6e9b713dfabcebb864d15ef771fa68a')
+        					no-repeat center center fixed;
+        		background-size: cover;
+        		background-blend-mode: overlay;
+        	}
+        	h1 {
+            	text-align: center;
+            	color: #008080;
+       		}
+        	table {
+            	width: 80%;
+            	margin: 20px auto;
+            	border-collapse: collapse;
+            	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            	background-color: #fff;
+        	}
+        	th, td {
+            	padding: 12px 15px;
+            	text-align: left;
+            	border-bottom: 1px solid #ddd;
+        	}
+        	th {
+            	background-color: #008080;
+            	color: #fff;
+        	}
+        	tr:nth-child(even) {
+            	background-color: #f2f2f2;
+        	}
+        	tr:hover {
+            	background-b5color: #ddd;
+        	}
+		</style>
+	</head>
+	
+	<body>
+		
+		<center><h1>List of Pets by Grooming Services</h1></center>
+		<div th:each="pet:${ByGroomingService}">
+		
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>Pet Id</strong></td>
+						<td>
+							<p th:text = "${pet.petId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Name</strong></td>
+						<td>
+							<p th:text = "${pet.name}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Breed</strong></td>
+						<td>
+							<p th:text = "${pet.breed}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Age</strong></td>
+						<td>
+							<p th:text = "${pet.age}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Price</strong></td>
+						<td>
+							<p th:text = "${pet.price}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Description</strong></td>
+						<td>
+							<p th:text = "${pet.description}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Image Url</strong></td>
+						<td>
+							<p th:text = "${pet.imageUrl}" />
+						</td>
+					</tr>
+					
+				</tbody>
+				
+			</table>
+			
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>Category Id</strong></td>
+						<td>
+							<p th:text = "${pet.petCategory.categoryId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Name</strong></td>
+						<td>
+							<p th:text = "${pet.petCategory.name}" />
+						</td>
+					</tr>
+					
+				</tbody>
+				
+			</table>
+		
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><strong>Service Id</strong></td>
+						<td>
+							<p th:text = "${pet.serviceId}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Name</strong></td>
+						<td>
+							<p th:text = "${pet.name}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Description</strong></td>
+						<td>
+							<p th:text = "${pet.description}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Price</strong></td>
+						<td>
+							<p th:text = "${pet.price}" />
+						</td>
+					</tr>
+					<tr>
+						<td><strong>Available</strong></td>
+						<td>
+							<p th:text = "${pet.available}" />
+						</td>
+					</tr>
+					
+				</tbody>
+				
+			</table>
+			
+		</div>
+		
+	</body>
+
+</html>

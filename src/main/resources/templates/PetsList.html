@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset = "UTF-8"
+		<title></title>
+		<style>
+			body{
+       			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        		margin: 0;
+        		padding: 0;
+        		background: url('https://img.freepik.com/free-vector/cute-pets-illustration_53876-112522.jpg?w=1380&t=st=1713329667~exp=1713330267~hmac=271856e8828bf055b014aef89d2d3e2ce6e9b713dfabcebb864d15ef771fa68a')
+        					no-repeat center center fixed;
+        		background-size: cover;
+        		background-blend-mode: overlay;
+        	}
+        	h1 {
+            	text-align: center;
+            	color: #008080;
+       		}
+        	table {
+            	width: 80%;
+            	margin: 20px auto;
+            	border-collapse: collapse;
+            	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            	background-color: #fff;
+        	}
+        	th, td {
+            	padding: 12px 15px;
+            	text-align: left;
+            	border-bottom: 1px solid #ddd;
+        	}
+        	th {
+            	background-color: #008080;
+            	color: #fff;
+        	}
+        	tr:nth-child(even) {
+            	background-color: #f2f2f2;
+        	}
+        	tr:hover {
+            	background-b5color: #ddd;
+        	}
+		</style>
+	</head>
+	
+	<body>
+		
+		<center><h1>List of all the Pets</h1></center>
+		<div th:each="pet:${AllPets}">
+		
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Attribute</th>
+						<th>Value</th>
+						<!--<th>Pet Id</th>
+						<th>Name</th>
+						<th>Breed</th>
+						<th>Age</th>
+						<th>Price</th>
+						<th>Description</th>
+						<th>Image Url</th>
+						<th>Pet Category</th>-->
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>Pet Id</td>
+						<td>
+							<span th:text = "${pet.petId}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Name</td>
+						<td>
+							<span th:text = "${pet.name}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Breed</td>
+						<td>
+							<span th:text = "${pet.breed}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td>
+							<span th:text = "${pet.age}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td>
+							<span th:text = "${pet.price}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Description</td>
+						<td>
+							<span th:text = "${pet.description}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Image Url</td>
+						<td>
+							<span th:text = "${pet.imageUrl}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>Pet Category</td>
+						<td>
+							<span th:text = "${pet.petCategory}"></span>
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+		
+		</div>
+		
+	</body>
+
+</html>

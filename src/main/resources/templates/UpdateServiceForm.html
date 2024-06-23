@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Service Form</title>
+		<style>
+			body{
+       			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        		margin: 0;
+        		padding: 0;
+        		background: url('https://img.freepik.com/free-vector/cute-pets-illustration_53876-112522.jpg?w=1380&t=st=1713329667~exp=1713330267~hmac=271856e8828bf055b014aef89d2d3e2ce6e9b713dfabcebb864d15ef771fa68a')
+        					no-repeat center center fixed;
+        		background-size: cover;
+        		background-blend-mode: overlay;
+        	}
+        	h1 {
+            	text-align: center;
+            	color: #008080;
+       		}
+        	table {
+            	width: 80%;
+            	margin: 20px auto;
+            	border-collapse: collapse;
+            	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            	background-color: #fff;
+        	}
+        	th, td {
+            	padding: 12px 15px;
+            	text-align: left;
+            	border-bottom: 1px solid #ddd;
+        	}
+        	th {
+            	background-color: #008080;
+            	color: #fff;
+        	}
+        	tr:nth-child(even) {
+            	background-color: #f2f2f2;
+        	}
+        	tr:hover {
+            	background-b5color: #ddd;
+        	}
+		</style>
+	</head>
+	
+	<body>
+		<center>
+		<div class="container">
+		<h1>Service Form</h1>
+		<form action="/services/updatedetails" method="put">
+			<div class="form-group">
+				<label for="serviceId">service Id:</label>
+				<input type="number" id="serviceId" name="serviceId" th:value=${Service.serviceId}>
+			</div>
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" th:value=${Service.name}>
+			</div>
+			<div class="form-group">
+				<label for="description">Description:</label>
+				<input type="text" id="description" name="description" th:value=${Service.description}>
+			</div>
+			<div class="form-group">
+				<label for="price">Price:</label>
+				<input type="decimal" id="price" name="price" th:value=${Service.price}>
+			</div>
+			<div class="form-group">
+				<label for="available">Available:</label>
+				<input type="number" id="available" name="available" th:value=${Service.available}>
+			</div>
+
+			<button type="submit">Submit</button>
+		</form>
+		</div>
+		</center>
+	</body>
+
+</html>
